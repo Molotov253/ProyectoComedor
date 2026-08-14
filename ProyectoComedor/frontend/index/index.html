@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control | Sistema Comedor</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="index.js" defer></script>
+</head>
+<body style="justify-content: flex-start; padding-top: 32px;">
+    <div class="dashboard-container">
+        <!-- Navigation Header -->
+        <header class="navbar">
+            <div class="navbar-brand">
+                <div class="brand-icon" style="width: 42px; height: 42px; margin: 0; border-radius: 12px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <span>Proyecto Comedor</span>
+            </div>
+
+            <div class="navbar-user">
+                <div class="user-badge">
+                    <span id="user-display-name">Cargando usuario...</span>
+                    <span id="user-display-role" class="role-pill role-operador">Operador</span>
+                </div>
+                <button type="button" id="btn-logout" class="btn btn-secondary" style="width: auto; padding: 8px 16px; font-size: 0.85rem;">
+                    Cerrar Sesión
+                </button>
+            </div>
+        </header>
+
+        <!-- Welcome Banner -->
+        <div class="stat-card" style="margin-bottom: 24px; background: linear-gradient(135deg, rgba(18, 26, 38, 0.9) 0%, rgba(16, 185, 129, 0.12) 100%); border-left: 4px solid var(--primary);">
+            <h2 style="font-size: 1.5rem; margin-bottom: 6px;">¡Bienvenido/a, <span id="welcome-name" style="color: var(--primary);">Usuario</span>!</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                Sistema de gestión y control del comedor institucional. Backend potenciado por <strong>Python & FastAPI</strong>.
+            </p>
+        </div>
+
+        <!-- Metrics Overview -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Servicio Activo</span>
+                    <svg style="width: 20px; height: 20px; color: var(--primary);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="stat-value">Almuerzo</div>
+                <div class="stat-desc">Horario de atención: 11:30 AM - 2:30 PM</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Raciones Asignadas</span>
+                    <svg style="width: 20px; height: 20px; color: var(--accent);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                </div>
+                <div class="stat-value">450 / 500</div>
+                <div class="stat-desc">90% de capacidad estimada</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span>Estado del Backend</span>
+                    <svg style="width: 20px; height: 20px; color: #10b981;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <div class="stat-value" style="color: var(--primary);">Online (Python)</div>
+                <div class="stat-desc">FastAPI + SQLite sincronizados</div>
+            </div>
+        </div>
+
+        <!-- Role Specific Workspace Card -->
+        <div class="stat-card">
+            <h3 id="panel-title" style="margin-bottom: 16px; font-size: 1.2rem;">Panel de Control</h3>
+            <div id="role-panel-content">
+                <!-- Inyectado por JS según el rol del usuario -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

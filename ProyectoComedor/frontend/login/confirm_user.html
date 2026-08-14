@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Seguridad | Sistema Comedor</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="confirm_user.js" defer></script>
+</head>
+<body>
+    <div class="auth-card">
+        <div class="card-header">
+            <div class="brand-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <h1 class="card-title">Verificación de Seguridad</h1>
+            <p class="card-subtitle">Por favor responde a tu pregunta de seguridad para completar el acceso al sistema.</p>
+        </div>
+
+        <div id="alert-box" class="alert"></div>
+
+        <form id="form-confirm" novalidate>
+            <!-- Desafío de Seguridad -->
+            <div class="challenge-card">
+                <div class="challenge-card-label">Pregunta de Seguridad</div>
+                <div id="pregunta-texto" class="challenge-card-question">Cargando pregunta...</div>
+            </div>
+
+            <div class="form-group">
+                <label for="respuesta_seguridad">Tu Respuesta <span class="required">*</span></label>
+                <input type="text" id="respuesta_seguridad" name="respuesta_seguridad" placeholder="Escribe tu respuesta aquí" required autofocus>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" id="btn-cancelar" class="btn btn-secondary">&larr; Cancelar</button>
+                <button type="submit" id="btn-confirmar" class="btn btn-primary">Confirmar y Acceder</button>
+            </div>
+        </form>
+
+        <div class="form-footer">
+            <p><a href="login.html">Volver al inicio de sesión</a></p>
+        </div>
+    </div>
+</body>
+</html>
